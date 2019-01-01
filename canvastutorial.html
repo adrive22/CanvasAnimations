@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="c" width="200" height="200"></canvas>
+    <script> 
+    //this is grabbing the canvas with id "c"//
+        var c = document.querySelector("#c");
+    //this method is grabbing the context from the canvas and setting it as a 2d canvas under the variable name ctx//
+        var ctx = c.getContext("2d");
+
+        var image = new Image();
+        image.onload = function(){
+            console.log("loaded image");
+            ctx.drawImage(image, 0, 0, c.width, c.height);
+        }
+
+        image.src = "sketch.png";
+
+    </script>
+</body>
+</html>

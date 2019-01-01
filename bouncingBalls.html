@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <canvas id="c"></canvas>
+    <script> 
+
+
+    var c = document.querySelector("#c");
+    var ctx = c.getContext("2d");
+    c.width=window.innerWidth;
+    c.height=window.innerHeight;
+
+
+//create a variable to be able to change the x to a random x coordinate
+var x = Math.random()*innerWidth;
+
+//create a random y variable
+var y = Math.random()*innerHeight;
+
+//create a variable for  x velocity(speed) you can make it a static integer or make it random everytime the window opens by making it random. 
+//Here we are making it random between 1-8.
+//subtracting .5 will give be able to give you  positive or negative number. multiply it by any number for speed
+var dx = (Math.random()-0.5) * 8;
+
+
+//create a variable for y velocity
+var dy = (Math.random()-0.5) * 8;
+
+//create a variable for the radius
+var radius=30
+
+//create a loop function//
+
+function animate(){
+    requestAnimationFrame(animate);
+//clears the previous shape so that it does not repeatedly draw the shape
+    ctx.clearRect(0,0,innerWidth, innerHeight);
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, 2 * Math.PI);
+    ctx.stroke();
+
+//adding dx to the x variable for speed. This adds the dx number to the x coordinate so when the shape gets remade it is further along the x axis. the higher the number the faster it goes
+    x+=dx;
+
+    y+=dy;
+
+
+//create a conditional for when the circle hits the edge of the screen the circle bounces back
+//if the begining x coordinate + the radius(this gets us to the edge of the circle) is greater than the innerWidth of the screen
+// OR //
+//if the begining x coordinate -  the radius (since dx is being changed to negative in the function) is less than 0 (to get it to bounce back) then...
+    if(x+radius>innerWidth || x-radius<0){
+//make the velocity negative so a negative number gets added to the x coordinate, resulting in a lower x coordinate number
+        dx = -dx;
+    }
+
+//create a conditional for when the circle hits the top and bottom of the screen
+    if(y+radius>innerHeight || y-radius<0){
+        dy = -dy;
+    }
+
+
+}
+
+animate();
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

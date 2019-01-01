@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="c" width="1000px"  height="700px"></canvas>
+    <script> 
+   
+
+
+    var c = document.querySelector("#c");
+    var ctx = c.getContext("2d");
+
+
+
+
+// MOVE AN OBJECT 
+
+// //creates and moves an object on click  20 pixels to the rights and 40 pixels down.
+
+// document.onclick = function(){
+//     ctx.translate(20,40);
+//     //begins path
+//     ctx.beginPath();
+// //puts the pen down here
+//     ctx.moveTo(50,50);
+// //drags pin to these coordinates
+//     ctx.lineTo(150,50);
+//     ctx.lineTo(150,150);
+//     ctx.lineTo(50,150);
+//     ctx.lineTo(50,50);
+// //makes the shape actually show up. HAVE TO HAVE THIS IN ORDER FOR SHAPE TO SHOW
+//     ctx.stroke();
+    
+// }
+
+
+//SCALE AN OBJECT
+// document.onclick = function(){
+   
+//     //begins path
+//     ctx.beginPath();
+// //makes the shape bigger on click//
+//     ctx.scale(1,2);
+// //puts the pen down here
+//     ctx.moveTo(50,50);
+// //drags pin to these coordinates
+//     ctx.lineTo(150,50);
+//     ctx.lineTo(150,150);
+//     ctx.lineTo(50,150);
+//     ctx.lineTo(50,50);
+// //makes the shape actually show up. HAVE TO HAVE THIS IN ORDER FOR SHAPE TO SHOW
+//     ctx.stroke();
+    
+// }
+
+
+//ROTATE AN OBJECT
+
+   document.onclick = function(){
+   
+   //begins path
+   ctx.beginPath();
+//puts the pen down here
+   ctx.moveTo(50,50);
+//drags pin to these coordinates
+   ctx.lineTo(150,50);
+   ctx.lineTo(150,150);
+   ctx.lineTo(50,150);
+   ctx.lineTo(50,50);
+//makes the shape actually show up. HAVE TO HAVE THIS IN ORDER FOR SHAPE TO SHOW
+   ctx.stroke();
+//rotates image around a certain point
+   ctx.rotate(50)
+   
+} 
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

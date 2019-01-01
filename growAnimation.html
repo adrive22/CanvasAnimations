@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <canvas id="c"></canvas>
+    <script> 
+
+//getting canvas
+    var c = document.querySelector("#c");
+    var ctx = c.getContext("2d");
+//setting width and height to fit the window
+    c.width=window.innerWidth;
+    c.height=window.innerHeight;
+
+
+
+
+var color=20;
+var colorTwo=200;
+//var colorThree=50;
+var x = 200;
+var y = 200
+
+function draw(){
+    ctx.fillStyle = 'rgb(' + colorTwo++ + ',100,' + color++ + ")";
+    ctx.beginPath();
+    ctx.fillRect(100, 100, x, y);
+    
+    x+=.4;
+    y+=.4;
+    if( x < 300){
+        requestAnimationFrame(draw);
+    }
+}
+draw();
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

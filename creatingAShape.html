@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="c" width="500" height="500"></canvas>
+    <script> 
+
+
+    var c = document.querySelector("#c");
+    var ctx = c.getContext("2d");
+
+//begins path
+    ctx.beginPath();
+//puts the pen down here
+    ctx.moveTo(50,50);
+//drags pin to these coordinates
+    ctx.lineTo(150,50);
+    ctx.lineTo(150,150);
+    ctx.lineTo(50,150);
+    ctx.lineTo(50,50);
+//makes the shape actually show up. HAVE TO HAVE THIS IN ORDER FOR SHAPE TO SHOW
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(75,75);
+    ctx.lineTo(125,75);
+    ctx.lineTo(125,125);
+    ctx.lineTo(75,75);
+    ctx.fill();
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>
